@@ -31,8 +31,11 @@ jobs:
           fetch-depth: 1
       
       - name: Project Setup
+        continue-on-error: true
+        env:
+          NODE_AUTH_TOKEN: ""
+          NPM_TOKEN: ""
         run: |
-          rm -f ~/.npmrc
           npm run setup
           npm run dev:daemon
 
