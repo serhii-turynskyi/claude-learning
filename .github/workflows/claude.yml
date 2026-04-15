@@ -32,6 +32,8 @@ jobs:
       
       - name: Project Setup
         run: |
+          npm config set registry https://registry.npmjs.org/
+          npm config delete //registry.npmjs.org/:_authToken
           npm run setup
           npm run dev:daemon
 
